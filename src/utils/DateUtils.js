@@ -197,13 +197,19 @@ const utils = {
    * @param {Date}
    * @param {String}
    * @param {Object}
+   * @param {Boolean}
    * @return {String}
    */
-  formatDate (date, format, translation) {
+  formatDate (date, format, translation, buddhist = false) {
     translation = (!translation) ? en : translation
     let year = this.getFullYear(date)
     let month = this.getMonth(date) + 1
     let day = this.getDate(date)
+
+    if (buddhist) {
+      year += 543
+    }
+
     let str = format
       .replace(/dd/, ('0' + day).slice(-2))
       .replace(/d/, day)

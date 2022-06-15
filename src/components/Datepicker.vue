@@ -22,6 +22,7 @@
       :required="required"
       :bootstrapStyling="bootstrapStyling"
       :use-utc="useUtc"
+      :buddhist="buddhist"
       @showCalendar="showCalendar"
       @closeCalendar="close"
       @typedDate="setTypedDate"
@@ -48,6 +49,7 @@
       :mondayFirst="mondayFirst"
       :dayCellContent="dayCellContent"
       :use-utc="useUtc"
+      :buddhist="buddhist"
       @changedMonth="handleChangedMonthFromDayPicker"
       @selectDate="selectDate"
       @showMonthCalendar="showMonthCalendar"
@@ -68,6 +70,7 @@
       :translation="translation"
       :isRtl="isRtl"
       :use-utc="useUtc"
+      :buddhist="buddhist"
       @selectMonth="selectMonth"
       @showYearCalendar="showYearCalendar"
       @changedYear="setPageDate">
@@ -87,6 +90,7 @@
       :translation="translation"
       :isRtl="isRtl"
       :use-utc="useUtc"
+      :buddhist="buddhist"
       @selectYear="selectYear"
       @changedDecade="setPageDate">
       <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
@@ -153,7 +157,8 @@ export default {
     maximumView: {
       type: String,
       default: 'year'
-    }
+    },
+    buddhist: Boolean
   },
   data () {
     const startDate = this.openDate ? new Date(this.openDate) : new Date()

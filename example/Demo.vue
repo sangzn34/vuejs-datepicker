@@ -10,6 +10,22 @@
     </div>
 
     <div class="example">
+      <h3>Buddhist datepicker</h3>
+      <datepicker placeholder="Select Date" :buddhist="true" />
+      <code>
+          &lt;datepicker placeholder="Select Date" :buddhist="true"&gt;&lt;/datepicker&gt;
+      </code>
+    </div>
+
+    <div class="example">
+      <h3>Buddhist datepicker with language thai</h3>
+      <datepicker placeholder="Select Date" :buddhist="true" :language="languages.th" />
+      <code>
+          &lt;datepicker placeholder="Select Date" :buddhist="true"  :language="languages.th"&gt;&lt;/datepicker&gt;
+      </code>
+    </div>
+
+    <div class="example">
       <h3>Typeable datepicker</h3>
       <datepicker placeholder="Type or select date" :typeable="true" />
       <code>
