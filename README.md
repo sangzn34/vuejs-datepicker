@@ -1,9 +1,7 @@
 # Datepicker
 
-[![Travis Build](https://img.shields.io/travis/charliekassel/vuejs-datepicker.svg)](https://travis-ci.org/charliekassel/vuejs-datepicker)
-[![Version](https://img.shields.io/npm/v/vuejs-datepicker.svg)](https://www.npmjs.com/package/vuejs-datepicker)
-[![Coveralls github](https://img.shields.io/coveralls/github/charliekassel/vuejs-datepicker.svg)](https://coveralls.io/github/charliekassel/vuejs-datepicker?branch=master)
-[![Downloads](https://img.shields.io/npm/dm/vuejs-datepicker.svg)](https://www.npmjs.com/package/vuejs-datepicker)
+[![Version](https://img.shields.io/npm/v/vuejs-datepicker-thai.svg)](https://www.npmjs.com/package/vuejs-datepicker-thai)
+[![Downloads](https://img.shields.io/npm/dm/vuejs-datepicker-thai.svg)](https://www.npmjs.com/package/vuejs-datepicker-thai)
 
 A datepicker Vue component. Compatible with Vue 2.x
 
@@ -22,19 +20,19 @@ NB. Vue 1.x was supported up to version v0.9.9. If you want to use this componen
 ## Demo
 
 To view a demo online:
-https://codesandbox.io/s/mpklq49wp
+https://codesandbox.io/s/vue-datepicker-demo-forked-eln74y
 
 To view demo examples locally clone the repo and run `npm install && npm run serve`
 
 ## Install
 
 ``` bash
-npm install vuejs-datepicker --save
+npm install vuejs-datepicker-thai --save
 ```
 
 
 ``` javascript
-import Datepicker from 'vuejs-datepicker';
+import Datepicker from 'vuejs-datepicker-thai';
 
 export default {
   // ...
@@ -147,6 +145,7 @@ Inline always open version
 | open-date                     | Date\|String    |             | If set, open on that date                |
 | minimum-view                  | String          | 'day'       | If set, lower-level views won't show     |
 | maximum-view                  | String          | 'year'      | If set, higher-level views won't show    |
+| buddhist                  | Boolean          | false      | If true, add year +543    |
 
 
 ## Events
