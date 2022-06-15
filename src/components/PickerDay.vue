@@ -47,7 +47,8 @@ export default {
     translation: Object,
     isRtl: Boolean,
     mondayFirst: Boolean,
-    useUtc: Boolean
+    useUtc: Boolean,
+    buddhist: Boolean
   },
   data () {
     const constructedDateUtils = makeDateUtils(this.useUtc)
@@ -126,7 +127,9 @@ export default {
      */
     currYearName () {
       const yearSuffix = this.translation.yearSuffix
-      return `${this.utils.getFullYear(this.pageDate)}${yearSuffix}`
+      const yearAdd = this.buddhist ? 543 : 0
+
+      return `${this.utils.getFullYear(this.pageDate) + yearAdd}${yearSuffix}`
     },
     /**
      * Is this translation using year/month/day format?

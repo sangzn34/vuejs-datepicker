@@ -35,11 +35,13 @@ export default {
     translation: Object,
     isRtl: Boolean,
     allowedToShowView: Function,
-    useUtc: Boolean
+    useUtc: Boolean,
+    buddhist: Boolean
   },
   computed: {
     years () {
       const d = this.pageDate
+      const yearAdd = this.buddhist ? 543 : 0
       let years = []
       // set up a new date object to the beginning of the current 'page'7
       let dObj = this.useUtc
@@ -47,7 +49,7 @@ export default {
         : new Date(Math.floor(d.getFullYear() / 10) * 10, d.getMonth(), d.getDate(), d.getHours(), d.getMinutes())
       for (let i = 0; i < 10; i++) {
         years.push({
-          year: this.utils.getFullYear(dObj),
+          year: this.utils.getFullYear(dObj) + yearAdd,
           timestamp: dObj.getTime(),
           isSelected: this.isSelectedYear(dObj),
           isDisabled: this.isDisabledYear(dObj)
@@ -63,7 +65,9 @@ export default {
       const decadeStart = Math.floor(this.utils.getFullYear(this.pageDate) / 10) * 10
       const decadeEnd = decadeStart + 9
       const yearSuffix = this.translation.yearSuffix
-      return `${decadeStart} - ${decadeEnd}${yearSuffix}`
+      const yearAdd = this.buddhist ? 543 : 0
+
+      return `${decadeStart + yearAdd} - ${decadeEnd + yearAdd}${yearSuffix}`
     },
     /**
      * Is the left hand navigation button disabled?
